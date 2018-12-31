@@ -2,6 +2,7 @@
 `shopt -s cdspell` (corrects typoos)  
 `shopt -s nocaseglob` (turns off case sensitivity)  
 `shopt -s histappend` (allow multiple terminals to write to the history file)  
+`export CDPATH='/var/log:~'` (variable is used with the cd built-in.)  
 
 ---
 
@@ -37,7 +38,6 @@ history | awk 'BEGIN {FS="[ \t]+|\\|"} {print $3}' | sort | uniq -c | sort -nr |
 cp /home/foo/realllylongname.cpp{,-old}
 cd -
 rename 's/text_to_find/been_renamed/' *.txt
-export CDPATH='/var/log:~' (variable is used with the cd built-in.)
 ```
 
 # Colourize bash  
