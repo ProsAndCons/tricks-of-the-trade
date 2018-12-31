@@ -1,7 +1,12 @@
-# Bash shortcuts
-
+# Must have  
 `shopt -s cdspell` (corrects typoos)  
 `shopt -s nocaseglob` (turns off case sensitivity)  
+`shopt -s histappend` (allow multiple terminals to write to the history file)  
+
+---
+
+# Bash shortcuts  
+
 ctrl + _ (undo)  
 ctrl + arrow (move forward a word)  
 ctrl + a (move cursor to start)  
@@ -18,17 +23,16 @@ ctrl + xx (move to the opposite end of the line)
 ctrl + y (pastes from the buffer)  
 ctrl + shift + c/v (copy/paste into terminal)  
 
-# History related 
+# History related  
 ```
 ctrl + r (reverse search)
 !! (rerun last command)
 !* (reuse arguments from previous command)
 !$ (use last argument of last command)
-shopt -s histappend (allow multiple terminals to write to the history file)
 history | awk 'BEGIN {FS="[ \t]+|\\|"} {print $3}' | sort | uniq -c | sort -nr | head (list the most used history commands)
 ```
 
-# File and navigation
+# File and navigation  
 ```
 cp /home/foo/realllylongname.cpp{,-old}
 cd -
@@ -36,15 +40,21 @@ rename 's/text_to_find/been_renamed/' *.txt
 export CDPATH='/var/log:~' (variable is used with the cd built-in.)
 ```
 
-# Colourize bash
+# Colourize bash  
 
-# enable colors
-`eval "\`dircolors -b\`"`
-# force ls to always use color and type indicators
-`alias ls='ls -hF --color=auto'`
-# make the dir command work kinda like in windows (long format)
-`alias dir='ls --color=auto --format=long'`
-# make grep highlight results using color
+## enable colors  
+~~~
+eval "`dircolors -b`"
+~~~
+### force ls to always use color and type indicators
+~~~
+alias ls='ls -hF --color=auto'
+~~~
+### make the dir command work kinda like in windows (long format)
+~~~
+alias dir='ls --color=auto --format=long'
+~~~
+### make grep highlight results using color
 ```
 export GREP_OPTIONS='--color=auto'
 
@@ -57,18 +67,18 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
 ```
 
-# Running commands in sequence
-`&&` (run second command if the first is successful)
-`;` (run second command regardless of success of first one)
+# Running commands in sequence  
+`&&` (run second command if the first is successful)  
+`;` (run second command regardless of success of first one)  
 
-# Redirecting I/O
-`2>&1` (redirect stdout and stderr to a file)
+# Redirecting I/O  
+`2>&1` (redirect stdout and stderr to a file)  
 
-# check for open ports
-`echo > /dev/tcp/<server ip>/<port>`
+# check for open ports  
+`echo > /dev/tcp/<server ip>/<port>`  
 
-# Examine executable
-`which <command>` (prints the full path of command)
-`file <path/to/file>` (prints any available info about the file's type)
-`command -V <some command/alias/binary>` (prints any info available about the command, including any packages that install it)
+# Examine executable  
+`which <command>` (prints the full path of command)  
+`file <path/to/file>` (prints any available info about the file's type)  
+`command -V <some command/alias/binary>` (prints any info available about the command, including any packages that install it)  
 
