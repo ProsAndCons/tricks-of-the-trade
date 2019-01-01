@@ -4,7 +4,7 @@
 `shopt -s histappend` (allow multiple terminals to write to the history file)  
 `export CDPATH='/var/log:~'` (variable is used with the cd built-in.)  
 
----
+---  
 
 # Bash shortcuts  
 
@@ -24,7 +24,11 @@ ctrl + xx (move to the opposite end of the line)
 ctrl + y (pastes from the buffer)  
 ctrl + shift + c/v (copy/paste into terminal)  
 
-# History related  
+---  
+
+# Bash commands  
+
+### History related  
 ```
 ctrl + r (reverse search)
 !! (rerun last command)
@@ -33,28 +37,45 @@ ctrl + r (reverse search)
 history | awk 'BEGIN {FS="[ \t]+|\\|"} {print $3}' | sort | uniq -c | sort -nr | head (list the most used history commands)
 ```
 
-# File and navigation  
+### File and navigation  
 ```
 cp /home/foo/realllylongname.cpp{,-old}
 cd -
 rename 's/text_to_find/been_renamed/' *.txt
 ```
 
-# Colourize bash  
+### Running commands in sequence  
+`&&` (run second command if the first is successful)  
+`;` (run second command regardless of success of first one)  
 
-## enable colors  
+### Redirecting I/O  
+`2>&1` (redirect stdout and stderr to a file)  
+
+### Check for open ports  
+`echo > /dev/tcp/<server ip>/<port>`  
+
+## Examine executable  
+`which <command>` (prints the full path of command)  
+`file <path/to/file>` (prints any available info about the file's type)  
+`command -V <some command/alias/binary>` (prints any info available about the command, including any packages that install it)  
+
+---  
+
+# Colourize Bash  
+
+### Enable colors  
 ~~~
 eval "`dircolors -b`"
 ~~~
-### force ls to always use color and type indicators
+### Force ls to always use color and type indicators  
 ~~~
 alias ls='ls -hF --color=auto'
 ~~~
-### make the dir command work kinda like in windows (long format)
+### Make the dir command work kinda like in windows (long format)  
 ~~~
 alias dir='ls --color=auto --format=long'
 ~~~
-### make grep highlight results using color
+### Make grep highlight results using color  
 ```
 export GREP_OPTIONS='--color=auto'
 
@@ -66,19 +87,4 @@ export LESS_TERMCAP_so=$'\E[01;42;30m' # begin the info box
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
 ```
-
-# Running commands in sequence  
-`&&` (run second command if the first is successful)  
-`;` (run second command regardless of success of first one)  
-
-# Redirecting I/O  
-`2>&1` (redirect stdout and stderr to a file)  
-
-# check for open ports  
-`echo > /dev/tcp/<server ip>/<port>`  
-
-# Examine executable  
-`which <command>` (prints the full path of command)  
-`file <path/to/file>` (prints any available info about the file's type)  
-`command -V <some command/alias/binary>` (prints any info available about the command, including any packages that install it)  
-
+---
