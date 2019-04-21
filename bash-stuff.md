@@ -1,8 +1,8 @@
 # Must have  
-`shopt -s cdspell` (corrects typoos)  
-`shopt -s nocaseglob` (turns off case sensitivity)  
-`shopt -s histappend` (allow multiple terminals to write to the history file)  
-`export CDPATH='/var/log:~'` (variable is used with the cd built-in.)  
+`shopt -s cdspell` # corrects typoos  
+`shopt -s nocaseglob` # turns off case sensitivity  
+`shopt -s histappend` # allow multiple terminals to write to the history file  
+`export CDPATH='/var/log:~'` # variable is used with the cd built-in.  
 
 ---  
 
